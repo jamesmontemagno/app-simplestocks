@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="13">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MSFT" borderStyle="roundedRect" minimumFontSize="17" id="323" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="78" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="324" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="116" width="560" height="30"/>
+                                <state key="normal" title="Get Quote">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="325" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="154" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="326" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="183" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint id="327" firstItem="323" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14"/>
+                            <constraint id="328" firstItem="323" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="329" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="323" secondAttribute="trailing" constant="20"/>
+                            <constraint id="330" firstItem="324" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="331" firstItem="324" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52"/>
+                            <constraint id="332" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="324" secondAttribute="trailing" constant="20"/>
+                            <constraint id="333" firstItem="325" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="334" firstItem="325" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90"/>
+                            <constraint id="335" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="325" secondAttribute="trailing" constant="20"/>
+                            <constraint id="336" firstItem="326" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="337" firstItem="326" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="119"/>
+                            <constraint id="338" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="326" secondAttribute="trailing" constant="20"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TextFieldTicker" destination="323" id="name-outlet-323"/>
+                        <outlet property="ButtonGetQuote" destination="324" id="name-outlet-324"/>
+                        <outlet property="LabelQuote" destination="325" id="name-outlet-325"/>
+                        <outlet property="LabelCompany" destination="326" id="name-outlet-326"/>
+                    </connections>
+                    <navigationItem title="Stocks" id="320" key="navigationItem"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293" y="-1"/>
+        </scene>
+        <scene sceneID="12">
+            <objects>
+                <navigationController id="13" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="15">
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="321" destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-359" y="-2"/>
+        </scene>
+    </scenes>
+</document>
