@@ -23,11 +23,11 @@ namespace StockDemo.ViewModel
             try
             {
                 IsBusy = true;
+                var url = "https://motzstocks2.azurewebsites.net/api/"
+                    + $"HttpTriggerCSharp1?ticker={ticker}";
 
                 var client = new HttpClient();
-                var json = await
-                    client.GetStringAsync(
-                        $"https://motzstocks.azurewebsites.net/api/HttpTriggerCSharp1?ticker={ticker}");
+                var json = await client.GetStringAsync(url);
 
                 Data = JsonConvert.DeserializeObject<QuoteData>(json);
             }
