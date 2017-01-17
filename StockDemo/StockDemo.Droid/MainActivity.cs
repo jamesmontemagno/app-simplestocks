@@ -1,16 +1,12 @@
-﻿using System;
-
+﻿
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using StockDemo.ViewModel;
 
 namespace StockDemo.Droid
 {
-	[Activity (Label = "Stocks", 
+    [Activity (Label = "Stocks", 
         MainLauncher = true, 
         Icon = "@drawable/icon")]
 	public class MainActivity : Activity
