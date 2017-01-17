@@ -21,6 +21,7 @@ namespace StockDemo.iOS
             ButtonGetQuote.TouchUpInside += async (sender, args) =>
             {
                 ButtonGetQuote.Enabled = false;
+                ProgressBar.StartAnimating();
 
                 var result = await viewModel.GetQuote(TextFieldTicker.Text);
 
@@ -33,6 +34,8 @@ namespace StockDemo.iOS
                 {
                     new UIAlertView("Error", "Unable to get quote", null, "OK").Show();
                 }
+
+                ProgressBar.StopAnimating();
 
                 ButtonGetQuote.Enabled = true;
 

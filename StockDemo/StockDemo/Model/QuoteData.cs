@@ -14,5 +14,5 @@ namespace StockDemo.Model
         public string Company { get; set; }
         public string YearRange { get; set; }
     }
-    
+
 }

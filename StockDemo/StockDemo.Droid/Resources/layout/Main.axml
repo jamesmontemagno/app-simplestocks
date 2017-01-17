@@ -2,11 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:padding="8dp">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edittext_ticker" />
+        android:id="@+id/edittext_ticker"
+        android:hint="Enter Ticker" />
     <Button
         android:id="@+id/button_getquote"
         android:layout_width="match_parent"
@@ -16,10 +18,12 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text_quote" />
+        android:id="@+id/text_quote"
+        android:text="Quote Here" />
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text_company" />
+        android:id="@+id/text_company"
+        android:text="Company Here" />
 </LinearLayout>

@@ -10,7 +10,9 @@ using StockDemo.ViewModel;
 
 namespace StockDemo.Droid
 {
-	[Activity (Label = "Stocks", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "Stocks", 
+        MainLauncher = true, 
+        Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
         StockViewModel viewModel;
@@ -22,32 +24,34 @@ namespace StockDemo.Droid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			var button = FindViewById<Button> (Resource.Id.button_getquote);
-            var edittext = FindViewById<EditText>(Resource.Id.edittext_ticker);
-
-            var quote = FindViewById<TextView>(Resource.Id.text_quote);
-            var company = FindViewById<TextView>(Resource.Id.text_company);
 
             viewModel = new StockViewModel();
+
+            // Get our button from the layout resource,
+            // and attach an event to it
+
+            var ticker = FindViewById<EditText>(Resource.Id.edittext_ticker);
+            var button = FindViewById<Button>(Resource.Id.button_getquote);
+            var labelQuote = FindViewById<TextView>(Resource.Id.text_quote);
+            var labelCompany = FindViewById<TextView>(Resource.Id.text_company);
 
             button.Click += async (sender, args) =>
             {
                 button.Enabled = false;
 
-                var result = await viewModel.GetQuote(edittext.Text);
-
-                if (!result)
-                    Toast.MakeText(this, "Unable to get quote", ToastLength.Short).Show();
+                var result = await viewModel.GetQuote(ticker.Text);
+                if(result)
+                {
+                    labelCompany.Text = viewModel.Data.Company;
+                    labelQuote.Text = viewModel.Data.CurrentQuote;
+                }
                 else
                 {
-                    quote.Text = viewModel.Data?.CurrentQuote ?? string.Empty;
-                    company.Text = viewModel.Data?.Company ?? string.Empty;
+                    labelCompany.Text = string.Empty;
+                    labelQuote.Text = string.Empty;
                 }
 
                 button.Enabled = true;
-
             };
             
 		}

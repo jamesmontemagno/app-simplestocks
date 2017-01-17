@@ -28,6 +28,10 @@ namespace StockDemo.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIActivityIndicatorView ProgressBar { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField TextFieldTicker { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -45,6 +49,11 @@ namespace StockDemo.iOS
             if (LabelQuote != null) {
                 LabelQuote.Dispose ();
                 LabelQuote = null;
+            }
+
+            if (ProgressBar != null) {
+                ProgressBar.Dispose ();
+                ProgressBar = null;
             }
 
             if (TextFieldTicker != null) {
